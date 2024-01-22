@@ -3,4 +3,4 @@ stages:
 test:
   stage: test
   script:
-    - echo "This is the a test job."
+    - echo "This is a test job."
