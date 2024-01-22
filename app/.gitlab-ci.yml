@@ -4,6 +4,7 @@ stages:
 variables:
   MY_VARIABLE: "Hello, CI/CD!"
 
+
 test_job:
   stage: test
   script:
