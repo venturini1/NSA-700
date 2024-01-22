@@ -45,4 +45,4 @@ deploy_production:
     - echo "Déploiement sur l'environnement de production"
     # Ajoutez ici les commandes nécessaires pour déployer votre application en production
   only:
-    - master  # Déploie uniquement à partir de la branche master
+    - main  # Déploie uniquement à partir de la branche master
