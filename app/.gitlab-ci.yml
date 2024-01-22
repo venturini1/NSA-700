@@ -3,11 +3,6 @@ stages:
   - test
   - deploy
 
-build_job:
-  stage: build
-  script:
-    - git clone git@github.com:venturini1/NSA-700
-
 variables:
   # Définissez ici les variables nécessaires pour votre pipeline
 
