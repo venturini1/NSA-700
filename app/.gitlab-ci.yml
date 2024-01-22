@@ -1,0 +1,43 @@
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  # Définissez ici les variables nécessaires pour votre pipeline
+
+before_script:
+  - apt-get update -qy
+  - apt-get install -y nodejs npm
+
+cache:
+  paths:
+    - node_modules/
+    - vendor/
+
+front_build:
+  stage: build
+  script:
+    - cd front  # Assurez-vous d'ajuster le chemin si votre frontend est dans un répertoire différent
+    - npm install
+    - npm run build
+
+back_install:
+  stage: build
+  script:
+    - cd back  # Assurez-vous d'ajuster le chemin si votre backend est dans un répertoire différent
+    - composer install --no-interaction --prefer-dist --optimize-autoloader
+
+back_tests:
+  stage: test
+  script:
+    - cd back
+    - vendor/bin/phpunit  # ou tout autre commandes de tests pour Laravel
+
+deploy_production:
+  stage: deploy
+  script:
+    - echo "Déploiement sur l'environnement de production"
+    # Ajoutez ici les commandes nécessaires pour déployer votre application en production
+  only:
+    - master  # Déploie uniquement à partir de la branche master
