@@ -1,12 +1,6 @@
 stages:
   - test
-
-variables:
-  MY_VARIABLE: "Hello, CI/CD!"
-
-
-test_job:
+test:
   stage: test
   script:
     - echo "This is a test job."
-    - echo "My variable value is: $MY_VARIABLE"
