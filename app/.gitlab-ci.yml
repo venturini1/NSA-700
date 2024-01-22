@@ -1,6 +1,6 @@
 stages:
   - test
-
+  
 variables:
   MY_VARIABLE: "Hello, CI/CD!"
 
